@@ -1,270 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços de Tradução - Estilo Vitoriano</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('https://images.stockcake.com/public/8/3/b/83b6aa0f-f8e1-44b0-9c78-f8511844faad_large/gilded-victorian-pattern-stockcake.jpg');
-            background-repeat: repeat;
-            background-size: auto;
-            font-family: 'Playfair Display', serif;
-            color: #f5f5f5; /* Cor clara para contraste com fundo escuro */
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid #d4af37; /* Borda dourada */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
+<title>Tradutor | Juan Marinho</title>
 
-        header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3em;
-            margin: 0;
-            color: #d4af37; /* Dourado */
-            text-shadow: 2px 2px 4px #000;
-            position: relative;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
-        header h1::before, header h1::after {
-            content: '';
-            background-image: url('https://elements-resized.envatousercontent.com/elements-cover-images/4ac622c5-35b0-4138-9053-05da47422aa8?w=433&cf_fit=scale-down&q=85&format=auto&s=013bc62c3e4dffc43a9f8989fdc8d68ce5c668b29264819d1903038ec2f16e96'); /* Ornamento de header */
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 200px;
-            height: 100px;
-            position: absolute;
-            top: -50px;
-        }
+<style>
 
-        header h1::before {
-            left: -220px;
-            transform: rotate(180deg);
-        }
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: #f5f5f5;
 
-        header h1::after {
-            right: -220px;
-        }
+    background-image: url('https://images.stockcake.com/public/8/3/b/83b6aa0f-f8e1-44b0-9c78-f8511844faad_large/gilded-victorian-pattern-stockcake.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
 
-        nav {
-            background-color: rgba(139, 0, 0, 0.8); /* Vermelho escuro semi-transparente */
-            padding: 15px;
-            text-align: center;
-            border-top: 3px double #d4af37;
-            border-bottom: 3px double #d4af37;
-        }
+/* HEADER */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0,0,0,0.75);
+    border-bottom: 3px solid #d4af37;
+}
 
-        nav a {
-            color: #f5f5f5;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.2em;
-            font-style: italic;
-            position: relative;
-        }
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3em;
+    color: #d4af37;
+    margin: 0;
+}
 
-        nav a::after {
-            content: '✦';
-            color: #d4af37;
-            position: absolute;
-            right: -25px;
-            top: 0;
-        }
+header p {
+    max-width: 800px;
+    margin: 10px auto 0;
+}
 
-        nav a:last-child::after {
-            content: '';
-        }
+/* NAV RESPONSIVO */
+nav {
+    background: rgba(139,0,0,0.85);
+    text-align: center;
+    padding: 10px;
+    border-top: 3px double #d4af37;
+    border-bottom: 3px double #d4af37;
+}
 
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border: 10px solid transparent;
-            border-image: url('https://i.etsystatic.com/18635432/r/il/42d802/2126753787/il_570xN.2126753787_i6nu.jpg') 30 round; /* Borda ornamentada */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-        }
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin: 10px 15px;
+    font-style: italic;
+    display: inline-block;
+}
 
-        section {
-            margin-bottom: 60px;
-            padding: 30px;
-            border: 2px dashed #d4af37;
-            background-color: rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
+/* MAIN */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+}
 
-        section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2em;
-            color: #d4af37;
-            text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
-            position: relative;
-        }
+/* SECTIONS */
+section {
+    margin-bottom: 50px;
+    padding: 25px;
+    border: 1px solid rgba(212,175,55,0.3);
+    background: rgba(20,20,20,0.6);
+}
 
-        section h2::before, section h2::after {
-            content: '❦';
-            color: #d4af37;
-            font-size: 1.5em;
-            position: absolute;
-            top: 0;
-        }
+h2 {
+    text-align: center;
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+}
 
-        section h2::before {
-            left: -30px;
-        }
+/* LISTAS */
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-        section h2::after {
-            right: -30px;
-        }
+li::before {
+    content: "➤ ";
+    color: #d4af37;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+/* CTA */
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 22px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
 
-        ul li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        ul li::before {
-            content: '➤';
-            color: #d4af37;
-            position: absolute;
-            left: 0;
-        }
+/* RESPONSIVO */
+@media (max-width: 768px) {
 
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+header h1 {
+    font-size: 2em;
+}
 
-        form label {
-            margin-bottom: 10px;
-            font-style: italic;
-        }
+nav a {
+    display: block;
+    margin: 8px 0;
+}
 
-        form input, form textarea {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #d4af37;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #f5f5f5;
-            font-family: 'Playfair Display', serif;
-        }
+main {
+    margin: 20px;
+}
 
-        form button {
-            background-color: #d4af37;
-            color: #000;
-            padding: 15px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
-            font-size: 1.2em;
-        }
+}
 
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            text-align: center;
-            border-top: 5px solid #d4af37;
-            font-style: italic;
-        }
-
-        .ornament {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .ornament img {
-            width: 200px;
-            height: auto;
-        }
-    </style>
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Juan Translations</h1>
-        <p>Por Juan Luiz Marinho, Tradutor de Inglês, Espanhol e Português</p>
-    </header>
 
-    <nav>
-        <a href="#sobre">Sobre Mim</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<header>
+    <h1>Juan Translations</h1>
+    <p>Traduções precisas que preservam sentido, tom e impacto — para textos técnicos, econômicos e literários.</p>
 
-    <main>
-        <section id="sobre">
-            <h2>Sobre o Tradutor</h2>
-            <p>Juan Luiz Marinho</p>
-            <p>
-Tradutor iniciante (inglês-espanhol-português) e apaixonado por idiomas.
-Especializando-me em finanças, tecnologia e linguística.
-Foco em traduções precisas, naturais e culturalmente adaptadas.
-Sempre aprendendo e comprometido com qualidade.</p>
-            <div class="ornament">
-                
-            </div>
-            <p> </p>
-        </section>
+    <a class="cta" href="https://wa.me/5500000000000" target="_blank">
+        Solicitar Tradução
+    </a>
+</header>
 
-        <section id="servicos">
-            <h2>Serviços Oferecidos</h2>
-            <ul>
-                <li>Tradução de Documentos Literários</li>
-                <li>Tradução Técnica com foco em finanças, tecnologia e literatura</li>
-                
-                </ul>
-            <div class="ornament">
-                </div>
-        </section>
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+</nav>
 
-        <section id="portfolio">
-            <h2>Portfólio de Trabalhos</h2>
-            <p>Aqui reside uma seleção de minhas traduções mais notáveis:</p>
-            <ul>
-                <li>Tradução de "Orgulho e Preconceito" para o Latim Clássico.</li>
-                <li>Versão em Português de tratados vitorianos sobre botânica.</li>
-                <li>Localização de romances góticos para o público moderno.</li>
-            </ul>
-            <p>Para amostras detalhadas, entre em contato.</p>
-        </section>
+<main>
 
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+<section id="sobre">
+<h2>Sobre Mim</h2>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+<ul>
+<li>Tradutor inglês–espanhol–português</li>
+<li>Especialização em finanças e linguística</li>
+<li>Foco em traduções naturais e precisas</li>
+<li>Comprometido com qualidade e clareza</li>
+</ul>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+</section>
 
-                <button type="submit">Enviar Missiva</button>
-            </form>
-        </section>
-    </main>
+<section id="servicos">
+<h2>Serviços</h2>
 
-    <footer>
-        <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados. Desenhado no espírito da Era Vitoriana.</p>
-    </footer>
+<ul>
+<li>Tradução literária</li>
+<li>Tradução técnica (economia e tecnologia)</li>
+<li>Localização de conteúdo</li>
+</ul>
+
+</section>
+
+<section id="portfolio">
+<h2>Portfólio</h2>
+
+<ul>
+<li>Tradução de “O Príncipe Feliz” (Oscar Wilde)</li>
+<li>Tradução de artigo econômico sobre inflação</li>
+<li>Localização de textos de tecnologia financeira</li>
+</ul>
+
+</section>
+
+</main>
+
+<a class="whatsapp" href="https://wa.me/5500000000000" target="_blank">
+💬
+</a>
+
 </body>
 </html>
