@@ -1,217 +1,958 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EN–PT–ES Translator | Juan Marinho</title>
+    <title>Juan Marinho — Tradutor e Especialista em Linguagens</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <meta
+        name="description"
+        content="Juan Marinho — Tradutor de Inglês, Espanhol e Português especializado em conteúdo literário, técnico e educacional."
+    >
 
-<style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    color: #f5f5f5;
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
 
-    background-image: url('https://images.stockcake.com/public/8/3/b/83b6aa0f-f8e1-44b0-9c78-f8511844faad_large/gilded-victorian-pattern-stockcake.jpg');
-    background-repeat: repeat;
-    background-attachment: fixed;
-}
+    <style>
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(0,0,0,0.75);
-    border-bottom: 3px solid #d4af37;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 3em;
-    color: #d4af37;
-    margin: 0;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-header p {
-    max-width: 800px;
-    margin: 10px auto 0;
-}
+        body {
+            background: #f5f3ee;
+            color: #171717;
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+            font-size: 20px; /* base bem maior */
+        }
 
-/* NAV */
-nav {
-    background: rgba(139,0,0,0.85);
-    text-align: center;
-    padding: 10px;
-    border-top: 3px double #d4af37;
-    border-bottom: 3px double #d4af37;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-nav a {
-    color: #f5f5f5;
-    text-decoration: none;
-    margin: 10px 15px;
-    font-style: italic;
-    display: inline-block;
-}
+        :root {
+            --background: #f5f3ee;
+            --paper: #ffffff;
+            --black: #171717;
+            --gray: #5a5a5a;
+            --light-gray: #dedbd3;
+            --accent: #174c3c;
+            --serif: "Playfair Display", serif;
+            --sans: "DM Sans", sans-serif;
+        }
 
-/* MAIN */
-main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(0,0,0,0.7);
-}
+        /* NAVIGATION */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(245, 243, 238, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+        }
 
-/* SECTIONS */
-section {
-    margin-bottom: 50px;
-    padding: 25px;
-    border: 1px solid rgba(212,175,55,0.3);
-    background: rgba(20,20,20,0.6);
-}
+        .nav-container {
+            width: min(1180px, 92%);
+            margin: auto;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-h2 {
-    text-align: center;
-    color: #d4af37;
-    font-family: 'Cinzel', serif;
-}
+        .logo {
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            font-weight: 600;
+        }
 
-/* LISTS */
-ul {
-    list-style: none;
-    padding: 0;
-}
+        .logo span {
+            color: var(--accent);
+        }
 
-li::before {
-    content: "➤ ";
-    color: #d4af37;
-}
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
 
-/* CTA */
-.cta {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 22px;
-    background: #d4af37;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-}
+        .nav-links a {
+            position: relative;
+        }
 
-/* WHATSAPP */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 15px 18px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width .25s ease;
+        }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-header h1 {
-    font-size: 2em;
-}
+        /* HERO */
+        .hero {
+            width: min(1180px, 92%);
+            margin: auto;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding-top: 90px;
+            padding-bottom: 70px;
+        }
 
-nav a {
-    display: block;
-    margin: 8px 0;
-}
+        .hero-content {
+            max-width: 920px;
+        }
 
-main {
-    margin: 20px;
-}
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 30px;
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+        }
 
-}
+        .hero-label::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: var(--accent);
+        }
 
-</style>
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(4.2rem, 8vw, 7.8rem);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -3.5px;
+            margin-bottom: 36px;
+        }
+
+        .hero h1 em {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            color: var(--gray);
+            font-size: 1.4rem;
+            line-height: 1.75;
+            margin-bottom: 44px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 32px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+
+        .button-primary {
+            color: white;
+            background: var(--accent);
+        }
+
+        .button-primary:hover {
+            background: #0f382c;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 2px solid var(--light-gray);
+            background: transparent;
+        }
+
+        .button-secondary:hover {
+            border-color: var(--black);
+        }
+
+        /* SECTIONS */
+        section {
+            width: min(1180px, 92%);
+            margin: auto;
+            padding: 140px 0;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: .38fr 1fr;
+            gap: 50px;
+            margin-bottom: 75px;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 5.8vw, 4.9rem);
+            line-height: 1.08;
+            font-weight: 500;
+            letter-spacing: -1.8px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin-top: 24px;
+            color: var(--gray);
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+        .about {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about-text {
+            font-family: var(--serif);
+            font-size: 2.05rem;
+            line-height: 1.5;
+        }
+
+        .about-details {
+            color: var(--gray);
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
+
+        .about-details p + p {
+            margin-top: 24px;
+        }
+
+        /* LANGUAGES */
+        .languages {
+            margin-top: 85px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .language {
+            padding: 45px 32px;
+            border-right: 1px solid var(--light-gray);
+        }
+
+        .language:last-child {
+            border-right: none;
+        }
+
+        .language-code {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .language h3 {
+            margin-top: 14px;
+            font-family: var(--serif);
+            font-size: 2.1rem;
+            font-weight: 500;
+        }
+
+        .language p {
+            margin-top: 12px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* SERVICES */
+        .services {
+            background: var(--black);
+            color: white;
+            width: 100%;
+        }
+
+        .services-inner {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .services .section-number {
+            color: #91b7aa;
+        }
+
+        .services .section-intro {
+            color: #b8b8b8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #333;
+        }
+
+        .service {
+            padding: 50px 36px;
+            border-right: 1px solid #333;
+            transition: background .25s ease;
+        }
+
+        .service:first-child {
+            border-left: 1px solid #333;
+        }
+
+        .service:hover {
+            background: #202020;
+        }
+
+        .service-number {
+            color: #91b7aa;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .service h3 {
+            margin: 55px 0 20px;
+            font-family: var(--serif);
+            font-size: 2.1rem;
+            font-weight: 500;
+        }
+
+        .service p {
+            color: #b8b8b8;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: .2fr 1fr .28fr;
+            gap: 30px;
+            padding: 45px 0;
+            border-top: 1px solid var(--light-gray);
+            align-items: start;
+        }
+
+        .project-year {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .project h3 {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 500;
+        }
+
+        .project p {
+            margin-top: 14px;
+            color: var(--gray);
+            font-size: 1.2rem;
+            line-height: 1.75;
+        }
+
+        .project-link {
+            justify-self: end;
+            color: var(--accent);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CERTIFICATIONS */
+        .certifications {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .cert-card {
+            border-top: 1px solid var(--light-gray);
+            padding: 45px 0;
+        }
+
+        .cert-card h3 {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .cert-meta {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cert-card p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            line-height: 1.75;
+            max-width: 760px;
+        }
+
+        /* APPROACH */
+        .experience {
+            background: var(--accent);
+            color: white;
+            width: 100%;
+        }
+
+        .experience-inner {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .experience .section-number {
+            color: #a7c7bd;
+        }
+
+        .experience .section-title {
+            max-width: 900px;
+        }
+
+        .experience-content {
+            margin-top: 75px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .experience-item {
+            border-top: 1px solid rgba(255,255,255,.25);
+            padding-top: 30px;
+        }
+
+        .experience-item h3 {
+            font-family: var(--serif);
+            font-size: 1.9rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .experience-item p {
+            color: rgba(255,255,255,.8);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            padding: 170px 20px;
+        }
+
+        .contact-label {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .contact h2 {
+            max-width: 940px;
+            margin: 30px auto;
+            font-family: var(--serif);
+            font-size: clamp(3.4rem, 7vw, 6.2rem);
+            line-height: 1.05;
+            font-weight: 500;
+            letter-spacing: -2.5px;
+        }
+
+        .contact p {
+            max-width: 660px;
+            margin: auto;
+            color: var(--gray);
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        .contact-buttons {
+            margin-top: 45px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        footer {
+            width: min(1180px, 92%);
+            margin: auto;
+            padding: 40px 0;
+            border-top: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            right: 28px;
+            bottom: 28px;
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,.18);
+            transition: transform .25s ease;
+            z-index: 999;
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-4px);
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            body {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 140px;
+                padding-bottom: 80px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.4rem, 11vw, 5rem);
+            }
+
+            .hero-description {
+                font-size: 1.25rem;
+            }
+
+            section {
+                padding: 100px 0;
+            }
+
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: clamp(2.6rem, 9vw, 3.6rem);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-text {
+                font-size: 1.75rem;
+            }
+
+            .languages {
+                grid-template-columns: 1fr;
+            }
+
+            .language {
+                border-right: none;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            .language:last-child {
+                border-bottom: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service {
+                border-left: 1px solid #333;
+                border-bottom: 1px solid #333;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .project-link {
+                justify-self: start;
+                margin-top: 14px;
+            }
+
+            .experience-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .contact {
+                padding: 120px 20px;
+            }
+
+            .contact h2 {
+                font-size: clamp(3rem, 10vw, 4.4rem);
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Juan Translations</h1>
-
-    <p>
-    Precise translations that preserve meaning, tone, and impact —
-    for technical and literary texts.
-    </p>
-
-    <p>
-    Experience in translation and quality review of educational content in economics.
-    </p>
-
-    <a class="cta" href="https://wa.me/5521998954524" target="_blank">
-        Request a Quote
-    </a>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo">
+            Juan <span>Marinho</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about">Sobre</a>
+            <a href="#services">Serviços</a>
+            <a href="#portfolio">Trabalhos</a>
+            <a href="#contact">Contato</a>
+        </div>
+    </div>
 </nav>
 
-<main>
+<header class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-label">
+            Tradutor e Especialista em Linguagens
+        </div>
+        <h1>
+            A linguagem é mais do que
+            <em>palavras.</em>
+        </h1>
+        <p class="hero-description">
+            Traduzo Inglês, Espanhol e Português com atenção ao significado, 
+            contexto, tom e estilo — criando textos que soam naturais 
+            no idioma de destino.
+        </p>
+        <div class="hero-buttons">
+            <a href="#portfolio" class="button button-primary">
+                Ver meus trabalhos
+            </a>
+            <a href="#contact" class="button button-secondary">
+                Entrar em contato
+            </a>
+        </div>
+    </div>
+</header>
 
-<section id="about">
-<h2>About Me</h2>
+<section class="about" id="about">
+    <div class="section-header">
+        <div class="section-number">01 — SOBRE</div>
+        <div>
+            <h2 class="section-title">Precisão encontra linguagem.</h2>
+            <p class="section-intro">
+                Traduzir não é simplesmente substituir palavras de um idioma 
+                por palavras de outro. É compreender o que um texto pretende 
+                transmitir — e recriar esse efeito para outro leitor.
+            </p>
+        </div>
+    </div>
 
-<ul>
-<li>English–Spanish–Portuguese Translator</li>
-<li>Background in Economics, Finance and Linguistics</li>
-<li>Focus on natural and accurate translations</li>
-<li>Committed to quality and clarity</li>
-</ul>
+    <div class="about-content">
+        <p class="about-text">
+            Meu trabalho combina sensibilidade linguística com formação 
+            acadêmica em economia, finanças e estudos de linguagem.
+        </p>
+        <div class="about-details">
+            <p>
+                Tenho especial interesse em textos em que terminologia, 
+                contexto e estilo importam: materiais educacionais, 
+                economia, tecnologia, literatura e conteúdo especializado.
+            </p>
+            <p>
+                Meu objetivo é claro: uma boa tradução deve soar como se 
+                tivesse sido escrita naturalmente no idioma de destino.
+            </p>
+        </div>
+    </div>
 
+    <div class="languages">
+        <div class="language">
+            <span class="language-code">EN</span>
+            <h3>Inglês</h3>
+            <p>Tradução, localização e QA</p>
+        </div>
+        <div class="language">
+            <span class="language-code">ES</span>
+            <h3>Espanhol</h3>
+            <p>Tradução e localização</p>
+        </div>
+        <div class="language">
+            <span class="language-code">PT</span>
+            <h3>Português</h3>
+            <p>Idioma nativo</p>
+        </div>
+    </div>
 </section>
 
-<section id="services">
-<h2>Services</h2>
+<section class="services" id="services">
+    <div class="services-inner">
+        <div class="section-header">
+            <div class="section-number">02 — SERVIÇOS</div>
+            <div>
+                <h2 class="section-title">Como posso ajudar.</h2>
+                <p class="section-intro">
+                    De textos literários a conteúdos educacionais especializados, 
+                    cada projeto recebe a mesma atenção à precisão e à clareza.
+                </p>
+            </div>
+        </div>
 
-<ul>
-<li>Literary Translation</li>
-<li>Technical Translation (Economics and Technology)</li>
-<li>Content Localization</li>
-</ul>
-
+        <div class="services-grid">
+            <article class="service">
+                <span class="service-number">01</span>
+                <h3>Tradução Literária</h3>
+                <p>
+                    Tradução de textos literários com atenção à voz, 
+                    ritmo, imagens, tom e ao estilo individual do autor.
+                </p>
+            </article>
+            <article class="service">
+                <span class="service-number">02</span>
+                <h3>Tradução Técnica</h3>
+                <p>
+                    Tradução especializada em economia, finanças, 
+                    tecnologia, educação e áreas relacionadas.
+                </p>
+            </article>
+            <article class="service">
+                <span class="service-number">03</span>
+                <h3>Localização & QA</h3>
+                <p>
+                    Revisão linguística, consistência terminológica, 
+                    proofreading e controle de qualidade de conteúdos 
+                    traduzidos e localizados.
+                </p>
+            </article>
+        </div>
+    </div>
 </section>
 
-<section id="portfolio">
+<section class="portfolio" id="portfolio">
+    <div class="section-header">
+        <div class="section-number">03 — TRABALHOS SELECIONADOS</div>
+        <div>
+            <h2 class="section-title">Uma seleção do meu trabalho.</h2>
+            <p class="section-intro">
+                Portfólio em crescimento de projetos de tradução 
+                e controle de qualidade.
+            </p>
+        </div>
+    </div>
 
-<h2>Portfolio</h2>
+    <article class="project">
+        <div class="project-year">PROJETO 01</div>
+        <div>
+            <h3>Legendagem Educacional & QA</h3>
+            <p>
+                Realizei cinco projetos de tradução e controle de qualidade 
+                envolvendo conteúdo educacional em vídeo para a 
+                Marginal Revolution University.
+            </p>
+        </div>
+    </article>
 
-<ul>
+    <article class="project">
+        <div class="project-year">PROJETO 02</div>
+        <div>
+            <h3>O Príncipe Feliz</h3>
+            <p>
+                Tradução para o português do clássico conto de Oscar Wilde.
+            </p>
+        </div>
+        <a href="https://juanlusomarinho.github.io/Pr%C3%ADncipe%20Feliz.pdf" target="_blank" rel="noopener" class="project-link">
+            Ler amostra →
+        </a>
+    </article>
 
-<li>
-Completed 5 translation and quality assurance (QA) projects
-for educational subtitling at Marginal Revolution University.
-</li>
-
-<li>
-Translation of “The Happy Prince” 
-<a href="    juanlusomarinho.github.io/Príncipe Feliz.pdf" target="_blank">
-View PDF Sample
-</a>
-</li>
-
-</ul>
-
+    <article class="project">
+        <div class="project-year">FOCO</div>
+        <div>
+            <h3>Economia & Educação</h3>
+            <p>
+                Interesse especial em economia, finanças, materiais 
+                educacionais e conteúdos explicativos, apoiado por 
+                formação acadêmica em economia.
+            </p>
+        </div>
+    </article>
 </section>
 
-</main>
+<section class="certifications" id="certifications">
+    <div class="section-header">
+        <div class="section-number">04 — CERTIFICAÇÕES</div>
+        <div>
+            <h2 class="section-title">Formação complementar.</h2>
+        </div>
+    </div>
 
-<a class="whatsapp" href="https://wa.me/5521998954524" target="_blank">
-💬
+    <div class="cert-card">
+        <h3>Translation as a career</h3>
+        <div class="cert-meta">OpenLearn · The Open University · Abril 2026</div>
+        <p>
+            Curso sobre a carreira de tradutor profissional, competências de tradução, 
+            avaliação de habilidades linguísticas e prática de tradução. 
+            Concluído com sucesso, incluindo todos os testes obrigatórios.
+        </p>
+    </div>
+</section>
+
+<section class="experience">
+    <div class="experience-inner">
+        <div class="section-header">
+            <div class="section-number">05 — ABORDAGEM</div>
+            <div>
+                <h2 class="section-title">O que valorizo em uma tradução.</h2>
+            </div>
+        </div>
+
+        <div class="experience-content">
+            <div class="experience-item">
+                <h3>Precisão</h3>
+                <p>
+                    O significado vem em primeiro lugar. Terminologia, 
+                    fatos, referências e nuances precisam sobreviver 
+                    à transição entre idiomas.
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3>Naturalidade</h3>
+                <p>
+                    Uma boa tradução não deve parecer traduzida. 
+                    O leitor do idioma de destino deve encontrar 
+                    um texto que soa natural em sua própria língua.
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3>Consistência</h3>
+                <p>
+                    Terminologia, estilo e formatação precisam 
+                    permanecer consistentes ao longo de todo o projeto.
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3>Contexto</h3>
+                <p>
+                    As palavras adquirem sentido a partir do entorno. 
+                    Compreender o assunto e o público-alvo é essencial 
+                    para produzir uma tradução sólida.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <span class="contact-label">Iniciar um projeto</span>
+    <h2>Tem um texto que merece uma tradução cuidadosa?</h2>
+    <p>
+        Conte-me um pouco sobre o seu projeto, os idiomas envolvidos 
+        e o tipo de conteúdo. Ficarei feliz em conversar com você.
+    </p>
+    <div class="contact-buttons">
+        <a href="https://wa.me/5521998954524" target="_blank" rel="noopener" class="button button-primary">
+            WhatsApp
+        </a>
+        <a href="mailto:juanlusomarinho@gmail.com" class="button button-secondary">
+            Enviar e-mail
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div>© 2026 Juan Marinho</div>
+    <div class="footer-links">
+        <a href="#about">Sobre</a>
+        <a href="#portfolio">Trabalhos</a>
+        <a href="#contact">Contato</a>
+    </div>
+</footer>
+
+<a href="https://wa.me/5521998954524" target="_blank" rel="noopener" class="whatsapp" aria-label="Fale comigo no WhatsApp">
+    ☎
 </a>
 
 </body>
